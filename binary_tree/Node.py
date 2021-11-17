@@ -44,6 +44,20 @@ class Node:
 
         return (Node.traverse_in_order(self.left) + [self.key] + Node.traverse_in_order(self.right))
 
+    # root left right
+    def traverse_pre_order(self):
+        if self is None or self.key is None:
+            return []
+
+        return ([self.key] + Node.traverse_pre_order(self.left) + Node.traverse_pre_order(self.right))
+
+    # left right root
+    def traverse_post_order(self):
+        if self is None or self.key is None:
+            return []
+
+        return (Node.traverse_pre_order(self.left) + Node.traverse_pre_order(self.right) + [self.key])
+
     # tree to tuple
     def to_tuple(self):
         if self is None:
@@ -54,9 +68,19 @@ class Node:
 
         return (Node.to_tuple(self.left), self.key, Node.to_tuple(self.right))
 
-    # is binary search tree
+    # is binary search tree - unique keys, left sub tree node < root < right subtree node
     def is_bst(self):
-        pass
+        list = self.traverse_in_order()
+        hi = len(list) - 1
+
+        for lo, num in enumerate(list):
+            if lo == hi:
+                return True
+
+            if lo < hi and num > list[lo + 1]:
+                break
+
+        return False
 
     def __repr__(self):
         return "Binary Tree: < {} >".format(self.to_tuple())
