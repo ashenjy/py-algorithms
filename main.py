@@ -8,9 +8,10 @@ def binary_tree(tuple):
         print(node.__str__)
 
         if node:
-            # node.display_keys('     ')
-            # node.max_depth()
-            # node.min_depth()
+            node.display_keys()
+            print("IN ORDER TRAVERSAL :", node.traverse_in_order())
+            print("MAX DEPTH :", node.max_depth())
+            print("MiN DEPTH :", node.min_depth())
             # node.size()
             # node.diameter()
             # node.is_bst()
@@ -35,8 +36,8 @@ if __name__ == '__main__':
     test_tuple3 = (1, 2)  # invalid
 
     tuple_list.append(test_tuple1)
-    tuple_list.append(test_tuple2)
-    tuple_list.append(test_tuple3)
+    # tuple_list.append(test_tuple2)
+    # tuple_list.append(test_tuple3)
 
     for test_no, tuple in enumerate(tuple_list):
         binary_tree(tuple)

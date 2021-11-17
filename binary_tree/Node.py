@@ -8,19 +8,40 @@ class Node:
         self.right = None
 
     def display_keys(self, space='\t', level=0):
-        pass
+        if self.key is None:
+            print(space * level + "None")
+            return
+
+        if self.left is None and self.right is None:
+            print(space * level + str(self.key))
+            return
+
+        Node.display_keys(self.left, space, level + 1)
+        print(space * level + str(self.key))
+        Node.display_keys(self.right, space, level + 1)
 
     def max_depth(self):
-        pass
+        if self is None:
+            return 0
+        return 1 + max(Node.max_depth(self.left), Node.max_depth(self.right))
 
     def min_depth(self):
-        pass
+        if self is None:
+            return 0
+        return 1 + min(Node.max_depth(self.left), Node.max_depth(self.right))
 
     def diameter(self):
         pass
 
     def size(self):
         pass
+
+    # left, root, right
+    def traverse_in_order(self):
+        if self is None:
+            return []
+
+        return (Node.traverse_in_order(self.left) + [self.key] + Node.traverse_in_order(self.right))
 
     # tree to tuple
     def to_tuple(self):
