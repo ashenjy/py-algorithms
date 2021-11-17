@@ -12,7 +12,7 @@ def binary_tree(tuple):
             print("IN ORDER TRAVERSAL :", node.traverse_in_order())
             print("MAX DEPTH :", node.max_depth())
             print("MiN DEPTH :", node.min_depth())
-            # node.size()
+            print("SIZE :", node.size())
             # node.diameter()
             # node.is_bst()
             # node.to_tuple()

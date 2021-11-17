@@ -31,14 +31,15 @@ class Node:
         return 1 + min(Node.max_depth(self.left), Node.max_depth(self.right))
 
     def diameter(self):
-        pass
+        return self.max_depth
 
+    # no of nodes
     def size(self):
-        pass
+        return len(self.traverse_in_order())
 
     # left, root, right
     def traverse_in_order(self):
-        if self is None:
+        if self is None or self.key is None:
             return []
 
         return (Node.traverse_in_order(self.left) + [self.key] + Node.traverse_in_order(self.right))
