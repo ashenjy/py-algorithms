@@ -18,6 +18,7 @@ def binary_tree(tuple):
             print("SIZE :", node.size())
             print("IS BST :", node.is_bst())
             print("left_right_outline :", node.left_right_outline())
+            print("is balanced ? :", node.is_balanced())
 
             # node.to_tuple()
             pass
@@ -35,7 +36,8 @@ if __name__ == '__main__':
     #
 
     # test scenarios
-    test_tuple1 = ((1, 3, None), 2, ((None, 3, 4), 5, (6, 7, 8)))
+    test_tuple1 = (((None, 3, 4), 3, (6, 7, 8)),
+                   2, ((None, 3, 4), 5, (6, 7, 8)))
     # test_tuple2 = ((1, 2, None), 3, ((None, 4, 5), 6, (7, 8, 9)))
     # test_tuple3 = (2)
     # test_tuple4 = (1, 2)  # invalid

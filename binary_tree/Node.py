@@ -1,5 +1,7 @@
 from typing import Tuple
 
+from binary_search_tree.BSTNode import BSTNode
+
 
 class Node:
     def __init__(self, key) -> None:
@@ -98,6 +100,26 @@ class Node:
         if self is None:
             return []
         return (Node.right_outline(self.right) + [self.key])
+
+    # left sub tree & right sub tree heights are equal
+    def is_balanced(self):
+        if self is None:
+            return False
+
+        # get the count of left sub tree == get the count right sub tree
+        return (Node.left_view_height(self.left) == Node.right_view_height(self.right))
+
+    def left_view_height(self):
+        if self is None:
+            return 0
+
+        return 1 + (Node.left_view_height(self.left))
+
+    def right_view_height(self):
+        if self is None:
+            return 0
+
+        return 1 + (Node.right_view_height(self.right))
 
     def __repr__(self):
         return "Binary Tree: < {} >".format(self.to_tuple())
