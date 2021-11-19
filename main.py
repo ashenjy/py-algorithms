@@ -17,6 +17,8 @@ def binary_tree(tuple):
             print("MiN DEPTH :", node.min_depth())
             print("SIZE :", node.size())
             print("IS BST :", node.is_bst())
+            print("left_right_outline :", node.left_right_outline())
+
             # node.to_tuple()
             pass
         else:
@@ -34,13 +36,15 @@ if __name__ == '__main__':
 
     # test scenarios
     test_tuple1 = ((1, 3, None), 2, ((None, 3, 4), 5, (6, 7, 8)))
-    test_tuple2 = ((1, 2, None), 3, ((None, 4, 5), 6, (7, 8, 9)))
-    test_tuple3 = (2)
-    test_tuple4 = (1, 2)  # invalid
+    # test_tuple2 = ((1, 2, None), 3, ((None, 4, 5), 6, (7, 8, 9)))
+    # test_tuple3 = (2)
+    # test_tuple4 = (1, 2)  # invalid
+    # test_tuple5 = (('ash', 'bro', 'hem'), 'jad', ('sid', 'son', 'vis'))
 
     tuple_list.append(test_tuple1)
-    tuple_list.append(test_tuple2)
-    # tuple_list.append(test_tuple3)
+    # tuple_list.append(test_tuple2)
+    # # tuple_list.append(test_tuple3)
+    # tuple_list.append(test_tuple5)
 
     for test_no, tuple in enumerate(tuple_list):
         binary_tree(tuple)

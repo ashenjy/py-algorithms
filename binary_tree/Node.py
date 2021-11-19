@@ -82,6 +82,23 @@ class Node:
 
         return False
 
+    # ((1, 3, None), 2, ((None, 3, 4), 5, (6, 7, 8)))
+    def left_right_outline(self):
+        if self is None:
+            return []
+        return (self.left_outline() + self.right_outline())
+
+    def left_outline(self):
+        if self is None:
+            return []
+
+        return (Node.left_outline(self.left) + [self.key])
+
+    def right_outline(self):
+        if self is None:
+            return []
+        return (Node.right_outline(self.right) + [self.key])
+
     def __repr__(self):
         return "Binary Tree: < {} >".format(self.to_tuple())
 
