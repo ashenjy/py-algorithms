@@ -107,7 +107,7 @@ class Node:
             return False
 
         # get the count of left sub tree == get the count right sub tree
-        return (Node.left_view_height(self.left) == Node.right_view_height(self.right))
+        return ((Node.left_view_height(self.left) == Node.right_view_height(self.right)), Node.left_view_height(self.left), Node.right_view_height(self.right))
 
     def left_view_height(self):
         if self is None:
